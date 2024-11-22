@@ -30,7 +30,6 @@ export default function AccountsPage() {
         const accountsData = await accountsResponse.json();
         const accounts = accountsData.items;
 
-        // Fetch balances for each account and flatten the data
         const fetchBalancesPromises = accounts.map(async (account: any) => {
           const balancesResponse = await fetch(
             `${listAccountURL}/${account.id}/balances`,
